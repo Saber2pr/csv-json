@@ -70,9 +70,9 @@ function toCsv(json) {
     head.forEach(function (key) {
       values.push(obj[key])
     })
-    return values.join(',')
+    return values.join(',').concat(',')
   })
-  result.unshift(head.join(','))
+  result.unshift(head.join(',').concat(','))
   return result.join('\n')
 }
 /**
