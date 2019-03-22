@@ -137,5 +137,5 @@ function onCsvChange(event) {
 function onJsonChange(event) {
   var value = event.target.value
   document.getElementById('csv').value = toCsv(value)
-  downloadFile('download', name, document.getElementById('json').value)
+  downloadFile('download', name, document.getElementById('csv').value)
 }
