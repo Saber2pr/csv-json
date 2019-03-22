@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>csv-json</title>
+  <style>
+    #root {
+      text-align: center
+    }
+
+    textarea {
+      width: 45%;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div><input type="file" id="input"></div>
+    <hr>
+    <div>
+      <textarea id="json" cols="30" rows="10" oninput="onJsonChange(event)"></textarea>
+      <textarea id="csv" cols="30" rows="10" oninput="onCsvChange(event)"></textarea>
+    </div>
+    <a id="download">保存到本地</a>
+    <hr>
+    <a href="https://github.com/Saber2pr">saber2r.github.io</a>
+  </div>
+</body>
+<script src="./js/csvTransformer.js"></script>
+
+</html>
