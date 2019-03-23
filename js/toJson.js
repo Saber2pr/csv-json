@@ -2,7 +2,7 @@
  * @Author: saber2pr 
  * @Date: 2019-03-22 18:21:02 
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-03-23 16:15:49
+ * @Last Modified time: 2019-03-23 16:44:50
  */
 /**
  * toJson
@@ -11,6 +11,10 @@
  * @returns {string}
  */
 function toJson(csv) {
+  if (typeof csv !== 'string') {
+    throw new Error('the csv must be string!')
+  }
+
   var arr = csv.split('\n').map(function (raw) {
     return raw.split(',')
   })
