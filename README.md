@@ -5,7 +5,7 @@
 [online>>](https://saber2pr.github.io/csv-json/index.html)
 
 ```bash
-npm i @saber/csv-json
+npm i @saber2pr/csv-json
 ```
 
 # API
