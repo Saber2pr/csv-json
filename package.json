@@ -1,0 +1,25 @@
+{
+  "name": "@saber2pr/csv-json",
+  "version": "0.0.0",
+  "description": "> csv->json, json->csv",
+  "files": [
+    "js/toCsv.js",
+    "js/toJson.js",
+    "package/*"
+  ],
+  "main": "./package/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saber2pr/csv-json.git"
+  },
+  "keywords": [
+    "csv",
+    "json"
+  ],
+  "author": "saber2pr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saber2pr/csv-json/issues"
+  },
+  "homepage": "https://github.com/Saber2pr/csv-json#readme"
+}

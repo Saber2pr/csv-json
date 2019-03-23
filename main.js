@@ -2,7 +2,7 @@
  * @Author: saber2pr 
  * @Date: 2019-03-22 11:55:31 
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-03-22 18:57:43
+ * @Last Modified time: 2019-03-23 16:12:22
  */
 var name
 /**
@@ -22,7 +22,7 @@ function isType(event, type) {
  */
 function onCsvChange(event) {
   var value = event.target.value
-  var json = JSON.stringify(toJson(value), null, 2)
+  var json = toJson(value)
   document.getElementById('json').value = json
   updateDownload()
 }
@@ -37,29 +37,6 @@ function onJsonChange(event) {
   document.getElementById('csv').value = csv
   updateDownload()
 }
-
-document.getElementById('input').addEventListener('change', function (event) {
-  ReaderAsync(event.target['files'][0]).then(function (res) {
-    if (isType(event, 'csv')) {
-      name = event.target['files'][0].name.replace('csv', 'json')
-      document.getElementById('csv').value = res
-      return toJson(res)
-    } else if (isType(event, 'json')) {
-      name = event.target['files'][0].name.replace('json', 'csv')
-      document.getElementById('json').value = res
-      return toCsv(res)
-    } else {
-      alert('文件格式错误!')
-    }
-  }).then(function (res) {
-    if (isType(event, 'csv')) {
-      document.getElementById('json').value = JSON.stringify(res, null, 2)
-    } else if (isType(event, 'json')) {
-      document.getElementById('csv').value = res
-    }
-    updateDownload()
-  })
-})
 /**
  * updateDownload
  */
@@ -72,3 +49,20 @@ function updateDownload() {
     alert('文件格式错误!')
   }
 }
+
+document.getElementById('input').addEventListener('change', function (event) {
+  ReaderAsync(event.target['files'][0]).then(function (res) {
+    if (isType(event, 'csv')) {
+      name = event.target['files'][0].name.replace('csv', 'json')
+      document.getElementById('csv').value = res
+      document.getElementById('json').value = toJson(res)
+    } else if (isType(event, 'json')) {
+      name = event.target['files'][0].name.replace('json', 'csv')
+      document.getElementById('json').value = res
+      document.getElementById('csv').value = toCsv(res)
+    } else {
+      alert('文件格式错误!')
+    }
+    updateDownload()
+  })
+})

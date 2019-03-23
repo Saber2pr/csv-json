@@ -1,16 +1,9 @@
-# csv-json
-
-> csv->json, json->csv
-
-[online>>](https://saber2pr.github.io/csv-json/index.html)
-
-```bash
-npm i @saber/csv-json
-```
-
-# API
-
-```ts
+/*
+ * @Author: saber2pr
+ * @Date: 2019-03-23 16:19:59
+ * @Last Modified by:   saber2pr
+ * @Last Modified time: 2019-03-23 16:19:59
+ */
 /**
  * toCsv
  *
@@ -19,9 +12,6 @@ npm i @saber/csv-json
  * @returns {string}
  */
 export function toCsv(json: string): string
-```
-
-```ts
 /**
  * toJson
  *
@@ -30,8 +20,3 @@ export function toCsv(json: string): string
  * @returns {string}
  */
 export function toJson(csv: string): string
-```
-
-# author
-
-> saber2pr
