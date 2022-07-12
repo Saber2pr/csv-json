@@ -16,13 +16,11 @@ function toJson(csv) {
   }
 
   var arr = csv.split('\n').map(function (raw) {
-    return raw.split(',')
+    return raw.split(',').filter(s => s)
   })
   var head = arr[0]
 
-  var data = arr.slice(1).filter(function (raw) {
-    return !raw.includes('')
-  }).map(function (raw) {
+  var data = arr.slice(1).map(function (raw) {
     return raw.reduce(function (out, value, index) {
       out[head[index]] = value
       return out
