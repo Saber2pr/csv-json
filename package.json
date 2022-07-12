@@ -1,6 +1,6 @@
 {
   "name": "@saber2pr/csv-json",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "> csv->json, json->csv",
   "files": [
     "js/toCsv.js",
