@@ -17,7 +17,7 @@ function toJson(csv) {
 
   var arr = csv.split('\n').map(function (raw) {
     return raw.split(',').filter(s => s)
-  })
+  }).filter(row => row.length > 0)
   var head = arr[0]
 
   var data = arr.slice(1).map(function (raw) {
